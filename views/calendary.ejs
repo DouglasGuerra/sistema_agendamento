@@ -1,0 +1,85 @@
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .calendar {
+    border: 1px solid #ccc;
+    width: 300px;
+    text-align: center;
+  }
+  
+  .month {
+    background-color: #f2f2f2;
+    padding: 10px;
+  }
+  
+  .weekdays {
+    display: flex;
+  }
+  
+  .weekdays div {
+    flex: 1;
+    padding: 5px;
+  }
+  
+  .days {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .days div {
+    flex: 1;
+    border: 1px solid #ccc;
+    padding: 5px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .days div:nth-child(7n) {
+    border-right: none;
+  }
+  
+  .days div:nth-last-child(-n+7) {
+    border-bottom: none;
+  }
+  
+
+</style>
+
+<div class="container border rounded mb-2 mt-3">
+
+    <div class="calendar">
+      <div class="month">
+        <h2>Novembro</h2>
+      </div>
+      <div class="weekdays">
+        <div>Dom</div>
+        <div>Seg</div>
+        <div>Ter</div>
+        <div>Qua</div>
+        <div>Qui</div>
+        <div>Sex</div>
+        <div>Sáb</div>
+      </div>
+      <div class="days">
+        <!-- Preencha os dias aqui dinamicamente, dependendo do mês -->
+        <!-- Por exemplo, para novembro de 2023 -->
+        <div></div> <!-- Vazio, pois novembro de 2023 começa numa quarta-feira -->
+        <div></div>
+        <div></div>
+        <div>1</div>
+        <!-- ... -->
+        <div>30</div>
+        <div></div> <!-- Vazio, pois novembro de 2023 termina numa quinta-feira -->
+      </div>
+    </div>
+  </div>

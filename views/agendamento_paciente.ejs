@@ -1,0 +1,77 @@
+<%- include("../views/inc/header.ejs") -%>
+
+
+<!-- Formulário paciente -->
+<div class="container border rounded shadow p-4 p-5 mt-5">
+    <h1 class="text-dark fs-3">Agende sua consulta</h1>
+    <marquee>Seja muito bem vindo meu amado paciente, como podemos te ajudar?</marquee>
+    <form class="row g-3" action="/agendamento_paciente" method="post">
+        <!-- Campo oculto para o ID -->
+        <input type="hidden" name="id" value="0">
+
+        <div class="col-md-6">
+            <label for="nome_completo" class="form-label">Nome Completo</label>
+            <input type="text" class="form-control" required="required" name="nome_completo">
+        </div>
+        <div class="col-md-6">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" required="required" name="email">
+        </div>
+        <div class="col-6">
+            <label for="horario_consulta" class="form-label">Horário da consulta</label>
+            <select class="form-select" aria-label="Default select example" name="horario_consulta" required="required">
+                <option disabled selected>Escolha um horário para atendimento</option>
+                <option value="8:00">8:00</option>
+                <option value="9:00">9:00</option>
+                <option value="10:00">10:00</option>
+                <option value="11:00">11:00</option>
+                <option value="12:00">12:00</option>
+                <option value="13:00">13:00</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+                <option value="16:00">16:00</option>
+                <option value="17:00">17:00</option>
+            </select>
+        </div>
+        <div class="col-6">
+            <label for="whatsapp" class="form-label">Whatsapp</label>
+            <input type="tel" class="form-control" required="required" placeholder="Digite seu número" name="whatsapp">
+        </div>
+        <div class="col-6">
+            <label for="profissional" class="form-label">Profissional</label>
+            <select class="form-select" aria-label="Default select example" name="profissional">
+                <option disabled selected>Profissional</option>
+                <option value="Douglas">Douglas</option>
+                <option value="Wesley">Carlos</option>
+                <option value="Karol">Karol</option>
+                <option value="Erika">Luciana</option>
+            </select>
+        </div>
+        <div class="col-6">
+            <label for="estado" class="form-label">Qual o seu estado?</label>
+            <select class="form-select" aria-label="Default select example" name="estado" required="required">
+                <option disabled selected>Qual o seu estado?</option>
+                <option value="RJ">RJ</option>
+                <option value="SP">SP</option>
+                <option value="ES">ES</option>
+                <option value="DF">DF</option>
+                <option value="MG">MG</option>
+                <option value="PR">PR</option>
+                <option value="Outros   ">Outros</option>
+            </select>
+        </div>
+
+        <div class="col-12 mt-3">
+            <button type="submit" class="btn btn-primary" id="btnSend">Agendar consulta</button>
+        </div>
+        <script>
+            
+        </script>
+        <p class="text-success"><%= message %></p>
+    </form>
+</div>
+
+
+
+
+<%- include("../views/inc/footer.ejs") -%>

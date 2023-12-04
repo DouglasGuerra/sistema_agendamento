@@ -1,0 +1,86 @@
+<%- include("../inc/header.ejs") -%>
+<%- include("../inc/menu_dashboard.ejs") -%>
+
+
+<!-- Formulário paciente -->
+<div class="container border rounded shadow p-4 p-5 mt-5">
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <a href="/anexos_paciente/<%= id %>/<%= nome %>/<%= email %>/<%= horario %>/<%= numero %>/<%= profissional %>/<%= estado %>"><button type="button" class="btn btn-primary text-light text-decoration-none">Anexos</button></a>
+        <a href="/observacoes_paciente/<%= id %>/<%= nome %>/<%= email %>/<%= horario %>/<%= numero %>/<%= profissional %>/<%= estado %>"><button type="button" class="btn btn-primary text-light text-decoration-none">Observações</button></a>
+        <a href="/prontuario_paciente/<%= id %>/<%= nome %>/<%= email %>/<%= horario %>/<%= numero %>/<%= profissional %>/<%= estado %>"><button type="button" class="btn btn-primary text-light text-decoration-none">Prontuário</button></a>
+      </div>
+
+    <h1 class="text-dark fs-3">Paciente Selecionado: <%= nome %></h1>
+
+
+    <form class="row g-3" action="/atualizando" method="put">
+        <!-- Campo oculto para o ID -->
+        <input type="hidden" name="id" value="<%= id %>">
+
+        <div class="col-md-6">
+            <label for="nome_completo" class="form-label">Nome Completo</label>
+            <input type="text" class="form-control" required="required" name="nome_completo" value="<%= nome %>">
+        </div>
+        <div class="col-md-6">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" required="required" name="email" value="<%= email %>">
+        </div>
+        <div class="col-6">
+            <label for="horario_consulta" class="form-label">Horário da consulta</label>
+            <select class="form-select" aria-label="Default select example" name="horario_consulta" required="required">
+                <option disabled selected>Escolha um horário para atendimento</option>
+                <option value="1"><%= email %></option>
+                <option value="1">8:00 - 8:50</option>
+                <option value="2">9:00 - 9:50</option>
+                <option value="3">10:00 - 10:50</option>
+                <option value="4">11:00 - 11:50</option>
+                <option value="5">12:00 - 12:50</option>
+                <option value="6">13:00 - 13:50</option>
+                <option value="7">14:00 - 14:50</option>
+                <option value="8">15:00 - 15:50</option>
+                <option value="9">16:00 - 16:50</option>
+                <option value="10">17:00 - 17:50</option>
+            </select>
+        </div>
+        <div class="col-6">
+            <label for="whatsapp" class="form-label">Whatsapp</label>
+            <input type="tel" class="form-control" required="required" placeholder="Digite seu número" name="whatsapp" value="<%= numero %>">
+        </div>
+        <div class="col-6">
+            <label for="profissional" class="form-label">Profissional</label>
+            <select class="form-select" aria-label="Default select example" name="profissional">
+                <option value="<%= profissional %>"><%= profissional %></option>
+                <option value="Douglas">Douglas</option>
+                <option value="Wesley">Carlos</option>
+                <option value="Karol">Karol</option>
+                <option value="Erika">Luciana</option>
+            </select>
+        </div>
+        <div class="col-6">
+            <label for="estado" class="form-label">Qual o seu estado?</label>
+            <select class="form-select" aria-label="Default select example" name="estado" required="required">
+                <option value="RJ"><%= estado %></option>
+                <option value="RJ">RJ</option>
+                <option value="SP">SP</option>
+                <option value="ES">ES</option>
+                <option value="DF">DF</option>
+                <option value="MG">MG</option>
+                <option value="PR">PR</option>
+                <option value="Outros">Outros</option>
+            </select>
+        </div>
+
+        <div class="col-12 mt-3">
+            <button type="submit" class="btn btn-success" id="btnSend">Atualizar Paciente</button>
+        </div>
+        <script>
+            
+        </script>
+    
+    </form>
+</div>
+
+
+
+
+<%- include("../inc/footer.ejs") -%>

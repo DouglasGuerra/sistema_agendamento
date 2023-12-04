@@ -1,0 +1,47 @@
+<%- include("../inc/header.ejs") -%>
+<%- include("../inc/menu_dashboard.ejs") -%>
+
+<div class="container border rounded shadow p-4 p-5 mt-5">
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <a href="/anexos_paciente/<%= id %>/<%= nome %>/<%= email %>/<%= horario %>/<%= numero %>/<%= profissional %>/<%= estado %>"><button type="button" class="btn btn-primary text-light text-decoration-none">Anexos</button></a>
+        <a href="/observacoes_paciente/<%= id %>/<%= nome %>/<%= email %>/<%= horario %>/<%= numero %>/<%= profissional %>/<%= estado %>"><button type="button" class="btn btn-primary text-light text-decoration-none">Observações</button></a>
+        <a href="/prontuario_paciente/<%= id %>/<%= nome %>/<%= email %>/<%= horario %>/<%= numero %>/<%= profissional %>/<%= estado %>"><button type="button" class="btn btn-primary text-light text-decoration-none">Prontuário</button></a>
+      </div>
+
+    <h1 class="text-dark fs-3">Paciente Selecionado: <%= nome %></h1>
+      <form class="form-control border-0" action="/comentario_do_paciente" method="POST">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Seu nome</label>
+          <input type="text" class="form-control" id="" name="nome_psicologo" placeholder="Digite seu nome" required>
+        </div>
+        <div class="mb-3">
+          <input type="hidden" class="form-control" id="" name="nome_paciente" value="<%= nome %>">
+        </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Observações</label>
+        <textarea class="form-control" id="observacoes_psicologo" name="comentario_psicologo"  required rows="3"></textarea>
+      </div>
+      <button class="btn btn-primary">comentar</button>
+      </form>
+
+      <div class="container">
+
+        <% if(dados == null || dados == undefined || dados == ""){  %>
+          <p>Nenhum comentário encontrado <p>
+
+       <% }else{  %>  
+            <% dados.forEach((row)=>{ %>
+            
+              <div class="container p-3 rounded text-dark mt-1 mb-1" style="background-color: #f5f5f4;">
+                <span style="font-size: 12px;"> <%= row.id %></span> <p style="font-size: 12px;">Psicologo: <%= row.nome_psicologo %></p>
+                  <p  style="font-size: 18px; font-weight: 600;"><%= row.comentario %></p></div>
+            <% }) %>
+      <% } %>
+    </div>
+
+</div>
+
+
+
+
+<%- include("../inc/footer.ejs") -%>

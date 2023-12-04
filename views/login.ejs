@@ -1,0 +1,24 @@
+<%- include("../views/inc/header.ejs") -%>
+
+<div class="container d-flex justify-content-center align-items-center">
+    <form class="mt-5 w-50 p-5 border rounded shadow p-2" action="/login" method="post">
+            <div class="container-fluid text-center">
+            <!-- <img src="/imagens/logo.png" class="w-25 ">  -->
+            </div>
+        <div class="mb-3">    
+          <label for="exampleInputEmail1" class="form-label">Usuário</label>
+          <input type="email" class="form-control" name="user" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">Nunca compartilharemos seu e-mail com mais ninguém.</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Senha</label>
+          <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input"  id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Lembrar dados</label>
+        </div>
+        <button type="submit" class="btn btn-primary text-light">Logar</button>
+             <p class="text-danger"> <%= message %> </p> 
+    </form>
+    </div>

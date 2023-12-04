@@ -1,0 +1,39 @@
+<%- include("../views/inc/header.ejs") -%>
+<%- include("../views/inc/menu_dashboard.ejs") -%>
+
+
+
+<div class="container border p-2 mt-5 rounded">
+<table class="table">
+  <thead>
+    <tr  >
+      <th scope="col">ID</th>
+      <th scope="col">Nome do paciente</th>
+      <th scope="col">Email</th>
+      <th scope="col">Horário</th>
+      <th scope="col">Numero</th>
+      <th scope="col">Profissional</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Editar</a></th>
+      <th scope="col">Excluir</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <% dados.forEach((row)=>{ %> 
+    <tr>
+      <th scope="row"><%= row.id %></th>
+      <td><%= row.nome %></td>
+      <td><%= row.email %></td>
+      <td><%= row.horario %></td>
+      <td><%= row.numero %></td>
+      <td><%= row.profissional %></td>
+      <td><%= row.estado %></td>
+      <td><button type="button" class="btn btn-success"><a href="/<%= row.id %>/<%= row.nome %>/<%= row.email %>/<%= row.horario %>/<%= row.numero %>/<%= row.profissional %>/<%= row.estado %>" class="text-light text-decoration-none">Editar</a></button></td>
+      <td><button type="button" class="btn btn-danger"><a href="#" class="text-light text-decoration-none">Excluir</a></button></td>
+    </tr>
+   <% })  %> 
+
+  </tbody>
+</table>
+</div>

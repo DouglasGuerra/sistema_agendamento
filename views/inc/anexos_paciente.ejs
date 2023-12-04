@@ -1,0 +1,23 @@
+<%- include("../inc/header.ejs") -%>
+<%- include("../inc/menu_dashboard.ejs") -%>
+
+<div class="container border rounded shadow p-4 p-5 mt-5">
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <a href="/anexos_paciente/<%= id %>/<%= nome %>/<%= email %>/<%= horario %>/<%= numero %>/<%= profissional %>/<%= estado %>"><button type="button" class="btn btn-primary text-light text-decoration-none">Anexos</button></a>
+        <a href="/observacoes_paciente/<%= id %>/<%= nome %>/<%= email %>/<%= horario %>/<%= numero %>/<%= profissional %>/<%= estado %>"><button type="button" class="btn btn-primary text-light text-decoration-none">Observações</button></a>
+        <a href="/prontuario_paciente/<%= id %>/<%= nome %>/<%= email %>/<%= horario %>/<%= numero %>/<%= profissional %>/<%= estado %>"><button type="button" class="btn btn-primary text-light text-decoration-none">Prontuário</button></a>
+      </div>
+
+    <h1 class="text-dark fs-3">Paciente Selecionado: <%= nome %></h1>
+    
+    <div class="mb-3">
+        <label for="formFile" class="form-label">Enviar Anexos</label>
+        <input class="form-control" type="file" id="formFile">
+      </div>
+
+</div>
+
+
+
+
+<%- include("../inc/footer.ejs") -%>
